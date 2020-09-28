@@ -1,1 +1,19 @@
 
+.container {
+  position: relative;
+  height: 100vh !important;
+  background: green;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 50vw !important;
+  height: 50vh !important;
+  background-color: blue;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+
+}
