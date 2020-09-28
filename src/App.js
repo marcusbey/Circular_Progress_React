@@ -18,6 +18,8 @@ function App() {
     
         <div className="container">
           <div className="box">
+          </div>
+          <div className="wrapper-shadow">
             <div className="wrapper">
               <CircularProgressbarWithChildren
                   value={progress}
@@ -54,13 +56,12 @@ function App() {
                       fill: '#FFF',
                     },
                   }}>
-                    <div style={{ width: "70%" }}>
-                      <CircularProgressbar
-                        strokeWidth={1}
-                        styles={buildStyles({
-                          pathColor: "rgba(121, 56, 186, 0.05)",
-                          })}
-                      />
+                    <div style={{ width: "100%" }}>
+                      <CircularProgressbarWithChildren strokeWidth={0.2} styles={buildStyles({ pathColor: "rgb(25, 31, 52, 1)", trailColor: "rgb(25, 31, 52, 0.5)"})}>
+                        <div style={{ width: "70%" }}> 
+                          <CircularProgressbar strokeWidth={1} styles={buildStyles({pathColor: "rgba(121, 56, 186, 0.05)"})}/>
+                        </div>
+                      </CircularProgressbarWithChildren>
                     </div>
                   </CircularProgressbarWithChildren>   
             </div>
