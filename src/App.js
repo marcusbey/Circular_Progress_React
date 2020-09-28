@@ -8,8 +8,6 @@ import {CircleProgress} from 'react-gradient-progress'
 import 'react-circular-progressbar/dist/styles.css';
 import './App.css';
 
-
-
 function App() {
   const [progress, setProgress] = useState(10)
   const [number, setNumber] = useState(10)
