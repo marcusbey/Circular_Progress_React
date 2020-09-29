@@ -1,19 +1,18 @@
 
 import React, { useEffect, useState } from 'react';
+import {useSpring, animated} from 'react-spring';
 import { CircularProgressbar, 
          CircularProgressbarWithChildren, 
          buildStyles
         } from 'react-circular-progressbar';
-import {CircleProgress} from 'react-gradient-progress'
 import 'react-circular-progressbar/dist/styles.css';
 import './App.css';
 
 function App() {
-  const [progress, setProgress] = useState(53)
-  const [price, setPrice] = useState(39)
+
 
   return (
-    
+      <animated.div style={props}>
         <div className="container">
           <div className="box">
           </div>
@@ -65,6 +64,7 @@ function App() {
             </div>
           </div>
         </div>
+      </animated.div>
   );
 }
 

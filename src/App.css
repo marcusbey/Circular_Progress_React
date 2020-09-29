@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarala&display=swap');
 
 .container {
   position: relative;
@@ -44,5 +44,7 @@
 
 
 .CircularProgressbar-text {
-  font-family: 'Kufam', cursive, arial;
+  font-family: 'Sarala', sans-serif, arial;
+  font-weight: bold;
+  font-stretch: expanded;
 }
