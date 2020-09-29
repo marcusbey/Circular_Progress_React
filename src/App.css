@@ -42,13 +42,33 @@
   border: solid 1px black;
 }
 
-
-.CircularProgressbar-text {
-  font-family: 'Sarala', sans-serif, arial;
-  font-weight: bold;
-  font-stretch: expanded;
-}
-
 .CircularProgressbar .CircularProgressbar-path {
   stroke: url(#idCSS);
 }
+
+.wrapper {
+  position: relative;
+}
+
+.price {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  text-align: center;
+  z-index: 10000;
+  font-family: 'Sarala', sans-serif, arial;
+  font-weight: bold;
+  font-stretch: expanded;
+  font-size: 36px;
+}
+
+.rotate {
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }} 

@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {useSpring, animated} from 'react-spring';
 import { CircularProgressbar, 
          CircularProgressbarWithChildren, 
@@ -8,37 +8,28 @@ import { CircularProgressbar,
 import 'react-circular-progressbar/dist/styles.css';
 import './App.css';
 
+const startingPrice = 100;
+
 function App() {
 
-  const props = useSpring({
-    progress: 0,
-    price: 0,
-    from: { 
-        progress: 100,
-        price: 100
-    },
-    config: { 
-        delay: 3000,
+  const startTime = useRef(new Date());
+  const [progress, setProgress] = useState(53)
+  const [price, setPrice] = useState(startingPrice)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const currentTime = new Date();
+      const elapsedSeconds = Math.round((currentTime - startTime.current)/1000);
+      const elapsedFiveSeconds = Math.floor(elapsedSeconds / 5);
+      const currentPrice = Math.max(startingPrice - (elapsedFiveSeconds * 5), 0);
+      setPrice(currentPrice);
+
+    }, 500);
+    return () => {
+      clearInterval(interval);
     }
-})
+  },[])
 
-
-  // const [progress, setProgress] = useState(53)
-  // const [price, setPrice] = useState(39)
-
-  // // useEffect(() => {
-  // // animate()
-  // // },[progress, price])
-
-  // // const animate = () => {
-  // //   setInterval(() => {
-  // //       setProgress(progress + 0.5)
-  // //   }, 500);
-
-  // //   setInterval(() => {
-  // //     setPrice(price + 5)
-  // // }, 1500);
-  // // }
 
 
   return (
@@ -47,12 +38,15 @@ function App() {
           <div className="box"  >
           </div>
           <div className="wrapper-shadow">
-            <animated.div style={props} className="wrapper">
+            <div className="wrapper">
+              <div className="price">
+                {price}$
+              </div>
               <CircularProgressbarWithChildren
-                value= {props.progress}
-                text={`${50}$`}
+                value= {30}
                 strokeWidth={10}
                 background={true}
+                className={price > 0 ? "rotate" : undefined}
                 styles={{
                     path: {
                       stroke: `#7938ba`,
@@ -88,10 +82,11 @@ function App() {
                     <div style={{ width: "70%" }}> 
                       <CircularProgressbar strokeWidth={1} styles={buildStyles({pathColor: "rgba(121, 56, 186, 0.05)"})}/>
                     </div>
+
                   </CircularProgressbarWithChildren>
                 </div>
               </CircularProgressbarWithChildren>   
-            </animated.div>
+            </div>
           </div>
         </div>
   );
