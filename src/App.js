@@ -10,20 +10,50 @@ import './App.css';
 
 function App() {
 
+  const props = useSpring({
+    progress: 0,
+    price: 0,
+    from: { 
+        progress: 100,
+        price: 100
+    },
+    config: { 
+        delay: 3000,
+    }
+})
+
+
+  // const [progress, setProgress] = useState(53)
+  // const [price, setPrice] = useState(39)
+
+  // // useEffect(() => {
+  // // animate()
+  // // },[progress, price])
+
+  // // const animate = () => {
+  // //   setInterval(() => {
+  // //       setProgress(progress + 0.5)
+  // //   }, 500);
+
+  // //   setInterval(() => {
+  // //     setPrice(price + 5)
+  // // }, 1500);
+  // // }
+
 
   return (
-      <animated.div style={props}>
+     
         <div className="container">
-          <div className="box">
+          <div className="box"  >
           </div>
           <div className="wrapper-shadow">
-            <div className="wrapper">
+            <animated.div style={props} className="wrapper">
               <CircularProgressbarWithChildren
-                  value={progress}
-                  text={`${price}$`}
-                  strokeWidth={10}
-                  background={true}
-                  styles={{
+                value= {props.progress}
+                text={`${50}$`}
+                strokeWidth={10}
+                background={true}
+                styles={{
                     path: {
                       stroke: `#7938ba`,
                       strokeLinecap: 'round',
@@ -53,18 +83,17 @@ function App() {
                       fill: '#FFF',
                     },
                   }}>
-                    <div style={{ width: "100%" }}>
-                      <CircularProgressbarWithChildren strokeWidth={0.2} styles={buildStyles({ pathColor: "rgb(25, 31, 52, 1)", trailColor: "rgb(25, 31, 52, 0.5)"})}>
-                        <div style={{ width: "70%" }}> 
-                          <CircularProgressbar strokeWidth={1} styles={buildStyles({pathColor: "rgba(121, 56, 186, 0.05)"})}/>
-                        </div>
-                      </CircularProgressbarWithChildren>
+                <div style={{ width: "100%" }}>
+                  <CircularProgressbarWithChildren strokeWidth={0.2} styles={buildStyles({ pathColor: "rgb(25, 31, 52, 1)", trailColor: "rgb(25, 31, 52, 0.5)"})}>
+                    <div style={{ width: "70%" }}> 
+                      <CircularProgressbar strokeWidth={1} styles={buildStyles({pathColor: "rgba(121, 56, 186, 0.05)"})}/>
                     </div>
-                  </CircularProgressbarWithChildren>   
-            </div>
+                  </CircularProgressbarWithChildren>
+                </div>
+              </CircularProgressbarWithChildren>   
+            </animated.div>
           </div>
         </div>
-      </animated.div>
   );
 }
 

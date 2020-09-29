@@ -48,3 +48,7 @@
   font-weight: bold;
   font-stretch: expanded;
 }
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: url(#idCSS);
+}
