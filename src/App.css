@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');
 
 .container {
   position: relative;
@@ -5,13 +6,13 @@
   display: flex; 
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to bottom, #3f0e82, #431487, #481a8d, #4c2092, #502598, #502598, #502598, #502598, #4c2092, #481a8d, #431487, #3f0e82);
-  }
+  background-image: linear-gradient(to bottom, #3f0e82, #451689, #4a1d8f, #502496, #552a9d, #552a9d, #552a9d, #552a9d, #502496, #4a1d8f, #451689, #3f0e82);
+}
 
 
   .box {
     position: absolute;
-    height: 20%;
+    height: 23%;
     width: 100%;
     background-color: #301278;
   }
@@ -39,4 +40,9 @@
 
 .CircularProgressbar-background svg circle{
   border: solid 1px black;
+}
+
+
+.CircularProgressbar-text {
+  font-family: 'Kufam', cursive, arial;
 }

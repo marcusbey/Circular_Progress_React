@@ -9,10 +9,8 @@ import 'react-circular-progressbar/dist/styles.css';
 import './App.css';
 
 function App() {
-  const [progress, setProgress] = useState(10)
-  const [number, setNumber] = useState(10)
-
-
+  const [progress, setProgress] = useState(53)
+  const [price, setPrice] = useState(39)
 
   return (
     
@@ -23,7 +21,7 @@ function App() {
             <div className="wrapper">
               <CircularProgressbarWithChildren
                   value={progress}
-                  text={`${number}$`}
+                  text={`${price}$`}
                   strokeWidth={10}
                   background={true}
                   styles={{
@@ -47,9 +45,9 @@ function App() {
                     // Customize the text
                     text: {
                       // Text color
-                      fill: '#f88',
+                      fill: 'rgb(108, 82, 164)',
                       // Text size
-                      fontSize: '25px',
+                      fontSize: '22px',
                     },
                     // Customize background - only used when the `background` prop is true
                     background: {
