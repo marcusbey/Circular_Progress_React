@@ -65,13 +65,6 @@ function App() {
                       transform: 'rotate(0.25turn)',
                       transformOrigin: 'center center',
                     },
-                    // Customize the text
-                    text: {
-                      // Text color
-                      fill: 'rgb(108, 82, 164)',
-                      // Text size
-                      fontSize: '22px',
-                    },
                     // Customize background - only used when the `background` prop is true
                     background: {
                       fill: '#FFF',

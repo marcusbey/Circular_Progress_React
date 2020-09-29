@@ -52,16 +52,17 @@
 
 .price {
   position: absolute;
-  top: 40%;
+  top: 36%;
   left: 0;
   right: 0;
   bottom: 20px;
   text-align: center;
   z-index: 10000;
   font-family: 'Sarala', sans-serif, arial;
-  font-weight: bold;
+  font-weight: 800;
   font-stretch: expanded;
-  font-size: 36px;
+  font-size: 50px;
+  color: rgb(108, 82, 164)
 }
 
 .rotate {
