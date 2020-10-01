@@ -20,8 +20,7 @@ function App() {
     const interval = setInterval(() => {
       const currentTime = new Date();
       const elapsedSeconds = Math.round((currentTime - startTime.current)/1000);
-      const elapsedFiveSeconds = Math.floor(elapsedSeconds / 5);
-      const currentPrice = Math.max(startingPrice - (elapsedFiveSeconds * 5), 0);
+      const currentPrice = Math.max(startingPrice - (elapsedSeconds * 5), 0);
       setPrice(currentPrice);
 
     }, 500);
